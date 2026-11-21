@@ -29,6 +29,13 @@ Apply these rules to public and private code, including framework glue. Build
 systems, CI, dependency management, and Git workflows are outside this skill.
 General prose style belongs to the Writing companion below.
 
+## Required Companion: Upstream Workarounds
+
+**REQUIRED SUB-SKILL:** Invoke `better-code:upstream-workarounds` (or its
+installed equivalent) when introducing or changing a local workaround for an
+upstream defect or gap. Track the upstream issue and add its reference and
+reason beside the workaround before calling the repair complete.
+
 ## Required Companion: Superpowers
 
 **REQUIRED SUB-SKILL:** Invoke `superpowers:using-superpowers` (or the equivalent

@@ -28,6 +28,12 @@ When creating, editing, or validating a skill, invoke `superpowers:writing-skill
 (or its installed equivalent) and follow its authoring and testing process.
 For other prose, apply this skill without invoking the skill-authoring workflow.
 
+When writing or editing a local workaround's explanation in code, build
+systems, CI, configuration, tooling, or documentation, invoke
+`better-code:upstream-workarounds` (or its installed equivalent) if it isn't
+already active. Apply its issue-tracking and adjacent-comment requirements;
+a commit message or memory alone doesn't satisfy them.
+
 When Better Code applies, it governs required contract content and semantics;
 Better Code Contracts governs drafting and formatting; this skill governs
 expression. Preserve required complexity, ownership, safety obligations,
