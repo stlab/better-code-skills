@@ -33,7 +33,7 @@ copilot plugin marketplace add stlab/better-code-skills
 copilot plugin install better-code@better-code-marketplace
 ```
 
-Run `copilot skill list` to check that the plugin's five skills are available.
+Run `copilot skill list` to check that the plugin's seven skills are available.
 Copilot may display the short skill names in this list. Start a new Copilot
 session after installation.
 
@@ -47,12 +47,25 @@ The plugin provides these namespaced skills:
 - `better-code:algorithm-research`: research standard algorithms and libraries
   after implementation planning.
 - `better-code:doing`: track started work across repositories and sessions.
+- `better-code:upstream-workarounds`: track upstream issues beside local
+  workarounds in code, builds, configuration, and tooling.
+- `better-code:finish-session`: reconcile session work and capture verified
+  learning with the host's available memory facilities.
 
 Better Code invokes Superpowers for development process and its own Writing and
 Contracts skills when needed. Writing invokes Technical Documentation for
 developer documentation other than declaration contracts. Algorithm Research
 complements Superpowers' planning workflow. Install the companions separately;
 installing Better Code does not install them.
+
+When you introduce a local workaround, Upstream Workarounds requires a matching
+upstream issue and an adjacent explanation. It covers build systems,
+configuration, and tooling as well as application code. If upstream filing is
+blocked, report the limitation and keep the missing reference explicit.
+
+Invoke `better-code:finish-session` before exiting to reconcile owned tasks,
+check for durable learning, and report remaining changes. It doesn't require
+a particular memory provider or authorize committing, pushing, or merging.
 
 If you previously installed standalone copies of these skills, remove or disable
 the duplicates to avoid ambiguous skill names.
@@ -77,6 +90,11 @@ The agent marks verified deliverables done and keeps partial, blocked, failed,
 or interrupted work open. A completed review can be done even with findings;
 an unfinished repair deliverable keeps its compound task open. The
 `stop_hook_active` guard prevents repeated blocking when work must remain open.
+
+Host dispatch and payload compatibility require separate verification. Follow
+the [live-host smoke-test procedure](skills/doing/tests/live-host-smoke.md)
+before relying on automatic completion blocking in a host/version. Use Doing's
+explicit completion checkpoint where live dispatch hasn't been verified.
 
 The hooks use Node.js and return context or checkpoint feedback. They use
 session and agent identities, not prompt or transcript contents, and do not
